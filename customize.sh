@@ -17,3 +17,6 @@ sed -i "s/option ssid.*/option ssid 'DCWRT'/" openwrt/package/kernel/mac80211/fi
 
 # Change DISTRIB_DESCRIPTION to DCWRT
 sed -i 's/DISTRIB_DESCRIPTION="LEDE"/DISTRIB_DESCRIPTION="DCWRT"/' openwrt/package/base-files/files/etc/openwrt_release
+
+# Change system hostname to DCWRT
+sed -i 's/hostname=.*/hostname=DCWRT/' openwrt/package/base-files/files/bin/config_generate
