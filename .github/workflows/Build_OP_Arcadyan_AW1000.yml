@@ -5,12 +5,12 @@ on:
   
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  CONFIG_FILE: 'AW1000OW24.config'
+  CONFIG_FILE: 'AW1000-OPENWRT-V24.config'
   REPO_BRANCH: master
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  TZ: Asia/Shanghai
+  TZ: Asia/Kuala_Lumpur
   
 jobs:
   build:
@@ -59,11 +59,7 @@ jobs:
       if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
-        echo 'src-git modem https://github.com/FUjr/modem_feeds.git;main' >> feeds.conf.default
-        echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-        echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
-        echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
+        cd openwrt 
 
     - name: Free up disk space
       env:
