@@ -1,5 +1,4 @@
 name:AW1000-immortalwrt-v23.05.4
-
 on: 
   repository_dispatch:
   workflow_dispatch:
