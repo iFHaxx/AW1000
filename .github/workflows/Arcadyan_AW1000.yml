@@ -75,7 +75,7 @@ jobs:
     - name: Configuration Customization - Build_Arcadyan_AW1000
       working-directory: ./immortalwrt
       run: |
-        chmod +x ../customize.sh && ../customize.sh
+        chmod +x ../imo-customize.sh && ../imo-customize.sh
         [[ -d "../files" ]] && mv -f ../files ./files
         [[ -e "../${CONFIG_FILE}" ]] && cp -f ../${CONFIG_FILE} .config
         make defconfig
